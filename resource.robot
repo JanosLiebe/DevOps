@@ -3,25 +3,21 @@ Library                 Selenium2Library
 Library                 XvfbRobot
 
 *** Variables ***
-${HOST}                 localhost:7272
-${URL}                  http://${HOST}/
-${USERNAME}             demo
-${PASSWORD}             mode
-${DELAY}                0
-${BROWSER}           Firefox
-${DELAY}             0
-${VALID USER}        demo
-${VALID PASSWORD}    mode
-
-${WELCOME URL}       http://${URL}/welcome.html
-${ERROR URL}         http://${URL}/error.html
-${HEADLESS}          ${False}
-${RESOURCE}          ${RESOURCE}.robot
+${SERVER}                          localhost:7272
+${SERVER ADDRESS}                  http://${HOST}/
+${USERNAME}                        demo
+${PASSWORD}                        mode
+${DELAY}                           0
+${BROWSER}                         Firefox
+${WELCOME URL}                     http://${URL}/welcome.html
+${ERROR URL}                       http://${URL}/error.html
+${HEADLESS}                        ${False}
+${RESOURCE}                        ${RESOURCE}.robot
 
 *** Keywords ***
 Open Login Page
-    Run Keyword If    '${HEADLESS}'=='True'    Start Virtual Display    1920    1080  
-    Open Browser    ${URL}    ${BROWSER}
+    Run Keyword If      '${HEADLESS}'=='True'    Start Virtual Display    1920    1080  
+    Open Browser        ${URL}    ${BROWSER}
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
     Login Page Should Be Open

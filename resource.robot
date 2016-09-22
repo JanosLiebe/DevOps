@@ -24,6 +24,9 @@ Open Login Page
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
     Login Page Should Be Open
+    
+Login Page Should Be Open
+    Title Should Be    Login Page
 
 #Open login page
  #   Open browser            ${URL}   #browser=gc

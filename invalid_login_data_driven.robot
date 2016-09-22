@@ -16,7 +16,8 @@ Login fails - Empty username and password       ${EMPTY}        ${EMPTY}
 *** Keywords ***
 Login should fail
     [Arguments]         ${user}     ${password}
-    Go login page
+    Open login page
+    #Go login page
     Give username               ${user}
     Give password               ${password}
     Click Login button

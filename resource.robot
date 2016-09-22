@@ -46,7 +46,3 @@ Check Page location
 
 Go login page
     Go To                   ${LOGIN URL}   #browser=gc
-
-*** Test cases ***
-Login page should open
-    Open login page

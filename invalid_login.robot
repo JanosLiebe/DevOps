@@ -29,5 +29,5 @@ Login should fail
     Give password               ${password}
     Click Login button
     #Page Should Contain        Login succeeded
-    Check Page location         http://localhost:7272/error.html
+    Check Page location         http://${SERVER ADDRESS}/error.html
     Check Page Title            Error Page

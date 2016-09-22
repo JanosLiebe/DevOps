@@ -8,6 +8,6 @@ Login should pass
     Give password               mode
     Click Login button
     #Page Should Contain        Login succeeded
-    Check Page location         http://localhost:7272/welcome.html
+    Check Page location         ${WELCOME URL}
     Check Page Title            Welcome Page
     [Teardown]                  Close Browser

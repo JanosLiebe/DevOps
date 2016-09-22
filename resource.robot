@@ -1,5 +1,6 @@
 *** Settings ***
 Library                 Selenium2Library
+Library                 XvfbRobot
 
 *** Variables ***
 ${HOST}                 localhost:7272

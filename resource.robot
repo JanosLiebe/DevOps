@@ -15,7 +15,7 @@ ${VALID PASSWORD}    mode
 ${WELCOME URL}       http://${URL}/welcome.html
 ${ERROR URL}         http://${URL}/error.html
 ${HEADLESS}          ${False}
-${RESOURCE}          null
+${RESOURCE}          ${RESOURCE}.robot
 
 *** Keywords ***
 Open Login Page

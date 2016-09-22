@@ -18,16 +18,16 @@ ${HEADLESS}          ${False}
 ${RESOURCE}          null
 
 *** Keywords ***
-Open Browser To Login Page
+Open Login Page
     Run Keyword If    '${HEADLESS}'=='True'    Start Virtual Display    1920    1080  
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
     Login Page Should Be Open
 
-Open login page
-    Open browser            ${URL}   #browser=gc
-    Set Selenium Speed      ${DELAY}
+#Open login page
+ #   Open browser            ${URL}   #browser=gc
+  #  Set Selenium Speed      ${DELAY}
 
 Give username
     [Arguments]             ${USERNAME}

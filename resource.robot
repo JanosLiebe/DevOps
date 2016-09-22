@@ -4,20 +4,20 @@ Library                 XvfbRobot
 
 *** Variables ***
 ${SERVER}                          localhost:7272
-${SERVER ADDRESS}                  http://${SERVER}
 ${USERNAME}                        demo
 ${PASSWORD}                        mode
 ${DELAY}                           0
 ${BROWSER}                         Firefox
-${WELCOME URL}                     http://${SERVER ADDRESS}/welcome.html
-${ERROR URL}                       http://${SERVER ADDRESS}/error.html
+${LOGIN URL}                       http://${SERVER}/
+${WELCOME URL}                     http://${SERVER}/welcome.html
+${ERROR URL}                       http://${SERVER}/error.html
 ${HEADLESS}                        ${False}
 ${RESOURCE}                        ${RESOURCE}.robot
 
 *** Keywords ***
 Open Login Page
     Run Keyword If      '${HEADLESS}'=='True'    Start Virtual Display    1920    1080  
-    Open Browser        ${SERVER ADDRESS}    ${BROWSER}
+    Open Browser        ${LOGIN URL}    ${BROWSER}
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
     Login Page Should Be Open

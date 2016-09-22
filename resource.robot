@@ -4,7 +4,7 @@ Library                 XvfbRobot
 
 *** Variables ***
 ${SERVER}                          localhost:7272
-${SERVER ADDRESS}                  http://${HOST}/
+${SERVER ADDRESS}                  http://${SERVER}/
 ${USERNAME}                        demo
 ${PASSWORD}                        mode
 ${DELAY}                           0

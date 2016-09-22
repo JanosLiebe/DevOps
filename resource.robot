@@ -14,6 +14,10 @@ ${ERROR URL}                       http://${SERVER}/error.html
 ${HEADLESS}                        ${False}
 ${RESOURCE}                        ${RESOURCE}.robot
 
+*** Test cases ***
+Login page should open
+    Open login page
+
 *** Keywords ***
 Open Login Page
     Run Keyword If      '${HEADLESS}'=='True'    Start Virtual Display    1920    1080  
@@ -24,10 +28,6 @@ Open Login Page
     
 Login Page Should Be Open
     Title Should Be    Login Page
-
-#Open login page
- #   Open browser            ${URL}   #browser=gc
-  #  Set Selenium Speed      ${DELAY}
 
 Give username
     [Arguments]             ${USERNAME}
@@ -45,9 +45,8 @@ Check Page title
     Title Should Be         ${PAGE_TITLE}
 
 Check Page location
-    [Arguments]             ${SERVER ADDRESS}
-    Location Should Be      ${SERVER ADDRESS}
+    [Arguments]             ${PAGE URL}
+    Location Should Be      ${PAGE URL}
 
 Go login page
-    Go To                   ${SERVER ADDRESS}   #browser=gc
-    Set Selenium Speed      ${DELAY}
+    Go To                   ${LOGIN URL}   #browser=gc

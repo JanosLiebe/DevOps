@@ -21,5 +21,5 @@ Login should fail
     Give password               ${password}
     Click Login button
     #Page Should Contain        Login succeeded
-    Check Page location         ${ERROR URL} 
+    Check Page location         ${ERROR URL}
     Check Page Title            Error Page

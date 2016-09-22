@@ -3,7 +3,7 @@ Resource                    resource.robot
 
 *** Test cases ***
 Login should pass
-    Open login page
+    Go login page
     Give username               demo
     Give password               mode
     Click Login button

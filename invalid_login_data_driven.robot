@@ -1,9 +1,11 @@
 *** Settings ***
 Resource                    resource.robot
 #Test Teardown               Close Browser
+
+Suite Setup                 Open Login Page
+Suite Teardown              Close Browser
+Test Setup                  Go Login Page
 Test Template               Login should fail
-Suite Setup                  Open login page
-Suite Teardown               Close Browser
 
 *** Test cases ***                          #   USERNAME        PASSWORD
 Login fails - Invalid username                  invalid         mode
@@ -16,8 +18,9 @@ Login fails - Empty username and password       ${EMPTY}        ${EMPTY}
 *** Keywords ***
 Login should fail
     [Arguments]         ${user}     ${password}
-    Open login page
-    #Go login page
+    #Run Keyword If      '${LOGIN PAGE OPEN}'=='True'      Go Login Page
+    #Run Keyword If      '${LOGIN PAGE OPEN}'=='False'     Open Login Page
+    Give username               demo
     Give username               ${user}
     Give password               ${password}
     Click Login button

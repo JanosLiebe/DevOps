@@ -1,10 +1,13 @@
 *** Settings ***
 Resource                    resource.robot
 
+Suite Setup                 Open Login Page
+Suite Teardown              Close Browser
+Test Setup                  Go Login Page
+Test Template               Login should pass
+
 *** Test cases ***
 Login should pass
-    Open login page
-    #Go login page
     Give username               demo
     Give password               mode
     Click Login button

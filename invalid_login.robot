@@ -1,6 +1,10 @@
 *** Settings ***
 Resource                    resource.robot
-Test teardown               Close Browser
+
+Suite Setup                 Open Login Page
+Suite Teardown              Close Browser
+Test Setup                  Go Login Page
+#Test Template               Login should fail
 
 *** Test cases ***
 Login fails - Invalid username
@@ -24,8 +28,6 @@ Login fails - Empty username and password
 *** Keywords ***
 Login should fail
     [Arguments]         ${user}     ${password}
-    Open login page
-    #Go login page
     Give username               ${user}
     Give password               ${password}
     Click Login button

@@ -1,6 +1,6 @@
 *** Settings ***
 Library                 Selenium2Library
-Library                 XvfbRobot
+Resource                ${RESOURCE}.robot
 
 *** Variables ***
 ${SERVER}                          localhost:7272
@@ -12,14 +12,14 @@ ${LOGIN URL}                       http://${SERVER}/
 ${WELCOME URL}                     http://${SERVER}/welcome.html
 ${ERROR URL}                       http://${SERVER}/error.html
 ${HEADLESS}                        ${False}
-${RESOURCE}                        ${RESOURCE}.robot
+${RESOURCE}                        null
 
 *** Keywords ***
 Open Login Page
     Run Keyword If      '${HEADLESS}'=='True'    Start Virtual Display    1920    1080  
-    Open Browser        ${LOGIN URL}    ${BROWSER}
+    Open Browser            ${LOGIN URL}    ${BROWSER}
     Maximize Browser Window
-    Set Selenium Speed    ${DELAY}
+    Set Selenium Speed      ${DELAY}
     Login Page Should Be Open
     
 Login Page Should Be Open
@@ -44,5 +44,5 @@ Check Page location
     [Arguments]             ${PAGE URL}
     Location Should Be      ${PAGE URL}
 
-Go login page
+Go Login Page
     Go To                   ${LOGIN URL}   #browser=gc

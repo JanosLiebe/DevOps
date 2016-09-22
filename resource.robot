@@ -14,10 +14,6 @@ ${ERROR URL}                       http://${SERVER}/error.html
 ${HEADLESS}                        ${False}
 ${RESOURCE}                        ${RESOURCE}.robot
 
-*** Test cases ***
-Login page should open
-    Open login page
-
 *** Keywords ***
 Open Login Page
     Run Keyword If      '${HEADLESS}'=='True'    Start Virtual Display    1920    1080  
@@ -50,3 +46,7 @@ Check Page location
 
 Go login page
     Go To                   ${LOGIN URL}   #browser=gc
+
+*** Test cases ***
+Login page should open
+    Open login page

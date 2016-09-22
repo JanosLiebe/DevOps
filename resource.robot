@@ -9,15 +9,15 @@ ${USERNAME}                        demo
 ${PASSWORD}                        mode
 ${DELAY}                           0
 ${BROWSER}                         Firefox
-${WELCOME URL}                     http://${URL}/welcome.html
-${ERROR URL}                       http://${URL}/error.html
+${WELCOME URL}                     http://${SERVER ADDRESS}/welcome.html
+${ERROR URL}                       http://${SERVER ADDRESS}/error.html
 ${HEADLESS}                        ${False}
 ${RESOURCE}                        ${RESOURCE}.robot
 
 *** Keywords ***
 Open Login Page
     Run Keyword If      '${HEADLESS}'=='True'    Start Virtual Display    1920    1080  
-    Open Browser        ${URL}    ${BROWSER}
+    Open Browser        ${SERVER ADDRESS}    ${BROWSER}
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
     Login Page Should Be Open
@@ -45,9 +45,9 @@ Check Page title
     Title Should Be         ${PAGE_TITLE}
 
 Check Page location
-    [Arguments]             ${URL}
-    Location Should Be      ${URL}
+    [Arguments]             ${SERVER ADDRESS}
+    Location Should Be      ${SERVER ADDRESS}
 
 Go login page
-    Go To                   ${URL}   #browser=gc
+    Go To                   ${SERVER ADDRESS}   #browser=gc
     Set Selenium Speed      ${DELAY}

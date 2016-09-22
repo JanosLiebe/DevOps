@@ -3,12 +3,28 @@ Library                 Selenium2Library
 
 *** Variables ***
 ${HOST}                 localhost:7272
-${URL}                  http://${HOST}
+${URL}                  http://${HOST}/
 ${USERNAME}             demo
 ${PASSWORD}             mode
 ${DELAY}                0
+${BROWSER}           Firefox
+${DELAY}             0
+${VALID USER}        demo
+${VALID PASSWORD}    mode
+
+${WELCOME URL}       http://${URL}/welcome.html
+${ERROR URL}         http://${URL}/error.html
+${HEADLESS}          ${False}
+${RESOURCE}          null
 
 *** Keywords ***
+Open Browser To Login Page
+    Run Keyword If    '${HEADLESS}'=='True'    Start Virtual Display    1920    1080  
+    Open Browser    ${URL}    ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed    ${DELAY}
+    Login Page Should Be Open
+
 Open login page
     Open browser            ${URL}   #browser=gc
     Set Selenium Speed      ${DELAY}

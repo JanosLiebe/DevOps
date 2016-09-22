@@ -4,7 +4,7 @@ Resource                    resource.robot
 Suite Setup                 Open Login Page
 Suite Teardown              Close Browser
 Test Setup                  Go Login Page
-Test Template               Login should pass
+#Test Template               Login should pass
 
 *** Test cases ***
 Login should pass
